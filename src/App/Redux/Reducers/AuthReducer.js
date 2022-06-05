@@ -13,7 +13,7 @@ const INITIAL_STATE = {
     username: "",
     password: "",
     email: "",
-    mobile: "",
+    phone_number: "",
     firstName: "",
     lastName: "",
     type: "",
