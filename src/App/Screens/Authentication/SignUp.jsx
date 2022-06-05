@@ -103,7 +103,7 @@ const SignUp = ({match}) => {
       await Auth.confirmSignUp(email, code);
       dispatch(addNewUser(userData));
       
-      history.push(`/home/shamshiranees`);
+      history.push(`/home/shabangit`);
     } catch (error) {
       console.log("error confirming sign up", error);
     }
@@ -170,12 +170,12 @@ const SignUp = ({match}) => {
                 variant="outlined"
                 required
                 fullWidth
-                id="namebiddingplatform"
-                onChange={(val) => onValueChange("namebiddingplatform", val)}
-                value={signUpVal.namebiddingplatform}
-                label="Name of Bidding platform"
-                name="namebiddingplatform"
-                autoComplete="namebiddingplatform"
+                id="phone_number"
+                onChange={(val) => onValueChange("phone_number", val)}
+                value={signUpVal.phone_number}
+                label="Phone Number"
+                name="phone_number"
+                autoComplete="phone_number"
               />
             </Grid>
             <Grid item xs={12}>
