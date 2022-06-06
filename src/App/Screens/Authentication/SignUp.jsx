@@ -60,7 +60,6 @@ const SignUp = ({match}) => {
       firstName,
       lastName,
       type,
-      namebiddingplatform,
     } = signUpVal;
     try {
       const { user } = await Auth.signUp({
@@ -87,7 +86,6 @@ const SignUp = ({match}) => {
       firstName,
       lastName,
       type,
-      namebiddingplatform,
     } = signUpVal;
 
   const  userData = {
@@ -97,7 +95,6 @@ const SignUp = ({match}) => {
       last_name: lastName,
       phone_number: phone_number,
       type: "user",
-      namebiddingplatform: namebiddingplatform
     };
     try {
       await Auth.confirmSignUp(email, code);
