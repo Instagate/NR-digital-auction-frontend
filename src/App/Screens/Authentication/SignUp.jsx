@@ -167,19 +167,6 @@ const SignUp = ({match}) => {
                 variant="outlined"
                 required
                 fullWidth
-                id="phone_number"
-                onChange={(val) => onValueChange("phone_number", val)}
-                value={signUpVal.phone_number}
-                label="Phone Number"
-                name="phone_number"
-                autoComplete="phone_number"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
                 name="password"
                 label="Password"
                 type="password"
