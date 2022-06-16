@@ -32,7 +32,6 @@ const theme = createMuiTheme({
 
 function App() {
 var myHeaders = new Headers();
-myHeaders.append("x-api-key", "8QtA6Q8cJnSTUcKsHk5Q2wshCIyeQ3ASewjEpM3L");
 myHeaders.append("Content-Type", "application/json");
 
 var raw = ""
@@ -43,7 +42,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://api.gsa.gov/assets/gsaauctions/v2/auctions", requestOptions)
+fetch("https://api.gsa.gov/assets/gsaauctions/v2/auctions?api_key=8QtA6Q8cJnSTUcKsHk5Q2wshCIyeQ3ASewjEpM3L", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
