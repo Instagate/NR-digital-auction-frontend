@@ -31,6 +31,19 @@ const theme = createMuiTheme({
 })
 
 function App() {
+  const [data, setData] = React.useState([]);
+  React.useEffect(() => {
+    const fetchLocation = async () => {
+      await fetch("https://api.gsa.gov/assets/gsaauctions/v2/auctions?api_key=DEMO_KEY&format=JSON")
+        .then((res) => res.json())
+        .then((data) => {
+          setData(data);
+          console.log(data);
+       });
+     };
+     fetchLocation();
+   }, []);
+
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
