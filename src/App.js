@@ -31,18 +31,22 @@ const theme = createMuiTheme({
 })
 
 function App() {
-  const [data, setData] = React.useState([]);
-  React.useEffect(() => {
-    const fetchLocation = async () => {
-      await fetch("https://api.gsa.gov/assets/gsaauctions/v2/auctions?api_key=DEMO_KEY&format=JSON")
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data);
-          console.log(data);
-       });
-     };
-     fetchLocation();
-   }, []);
+var myHeaders = new Headers();
+myHeaders.append("x-api-key", "8QtA6Q8cJnSTUcKsHk5Q2wshCIyeQ3ASewjEpM3L");
+myHeaders.append("Content-Type", "application/json");
+
+var raw = ""
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+await fetch("https://api.gsa.gov/assets/gsaauctions/v2/auctions", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 
   return (
     <Provider store={store}>
