@@ -43,7 +43,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-await fetch("https://api.gsa.gov/assets/gsaauctions/v2/auctions", requestOptions)
+fetch("https://api.gsa.gov/assets/gsaauctions/v2/auctions", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
